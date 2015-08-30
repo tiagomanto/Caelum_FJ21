@@ -12,9 +12,9 @@ public class TesteInsertDAO {
 		
 		//pronto para gravar
 		Contato contato = new Contato();
-		contato.setNome("Leandro");
-		contato.setEmail("leandro.f.smart@gmail.com");
-		contato.setEndereco("José Aparecido Oliveira, 116");
+		contato.setNome("Mariana");
+		contato.setEmail("mari@gmail.com");
+		contato.setEndereco("Praca da Republica, 54");
 		contato.setDataNascimento(Calendar.getInstance());
 		
 		//gravando nesta conexão
