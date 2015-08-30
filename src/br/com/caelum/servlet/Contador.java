@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/contador")
 public class Contador extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private int contador = 0; // variavel de instancia
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
