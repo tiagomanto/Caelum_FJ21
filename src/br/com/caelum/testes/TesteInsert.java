@@ -19,9 +19,9 @@ public class TesteInsert {
 		PreparedStatement stmt = connection.prepareStatement(sql);
 		
 		//preenche os valores
-		stmt.setString(1, "Rafael");
-		stmt.setString(2, "rafael_smart@hotmail.com");
-		stmt.setString(3, "Jose aparecido 116");
+		stmt.setString(1, "Paloma");
+		stmt.setString(2, null);
+		stmt.setString(3, "Rua Almeida, 22");
 		
 		//pega a data atual		
 		java.sql.Date dataParaGravar = new java.sql.Date( Calendar.getInstance().getTimeInMillis());
