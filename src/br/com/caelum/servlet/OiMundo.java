@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class OiMundo extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1919529822176254338L;
+
 	protected void service (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
 		PrintWriter out = response.getWriter();
