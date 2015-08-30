@@ -1,7 +1,5 @@
 package br.com.caelum.testes;
 
-import java.text.DateFormat;
-import java.sql.Date;
 import java.util.List;
 
 import br.com.caelum.jdbc.dao.ContatoDAO;
