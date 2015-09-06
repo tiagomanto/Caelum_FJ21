@@ -1,5 +1,6 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -40,7 +41,7 @@ public class AlteraContatoLogic implements Logica {
 
 		
 		//Altera o contato
-		new ContatoDAO().altera(contato);
+		new ContatoDAO((Connection) req.getAttribute("conexao")).altera(contato);
 		System.out.println("Contato alterado com sucesso!!!!");
 		
 		

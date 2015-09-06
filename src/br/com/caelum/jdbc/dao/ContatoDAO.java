@@ -16,9 +16,13 @@ public class ContatoDAO {
 
 	// a conexao
 	private Connection connection;
-
+	
 	public ContatoDAO() {
 		this.connection = new ConnectionFactory().getConnection();
+	}
+	
+	public ContatoDAO(Connection connection){
+		this.connection = connection;
 	}
 
 	// metodo adiciona

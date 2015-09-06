@@ -22,9 +22,6 @@ body {
 	<!-- importa o cabecalho -->
 	<c:import url="cabecalho.jsp" />
 
-	<!--  cria o DAO -->
-	<jsp:useBean id="dao" class="br.com.caelum.jdbc.dao.ContatoDAO" />
-
 	<table border="1" style="width: 80%">
 		<tr>
 			<th>Nome</th>

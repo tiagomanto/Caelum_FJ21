@@ -1,5 +1,7 @@
 package br.com.caelum.mvc.logica;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +14,7 @@ public class AlterandoContatoLogic implements Logica{
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		
 		// retorna o objeto Contato, atraves do DAO, utilizando o id que veio do request
-		Contato contato = new ContatoDAO().retornaUmContato(Integer.parseInt(req.getParameter("id")));
+		Contato contato = new ContatoDAO((Connection) req.getAttribute("conexao")).retornaUmContato(Integer.parseInt(req.getParameter("id")));
 		
 		req.setAttribute("contato", contato);
 		
