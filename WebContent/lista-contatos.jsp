@@ -25,7 +25,6 @@ body {
 	<!--  cria o DAO -->
 	<jsp:useBean id="dao" class="br.com.caelum.jdbc.dao.ContatoDAO" />
 
-	<h1>Table renderizada via taglibs</h1>
 	<table border="1" style="width: 80%">
 		<tr>
 			<th>Nome</th>
@@ -53,6 +52,11 @@ body {
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<form action="mvc">		
+		<input type="hidden" name="logica" value="AdicionandoContatoLogic">
+		<input type="submit" value="Adicionar novo contato">		
+	</form>
 
 	<!--  importando o rodape  -->
 	<c:import url="rodape.jsp" />

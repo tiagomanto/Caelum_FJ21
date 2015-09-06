@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import br.com.caelum.jdbc.ConnectionFactory;
 import br.com.caelum.jdbc.modelo.Contato;
 
@@ -41,6 +39,7 @@ public class ContatoDAO {
 			// executa
 			stmt.execute();
 			stmt.close();
+			System.out.println("Contato adicionado com sucesso!");
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

@@ -26,9 +26,9 @@ body {
 <body>
 <c:import url="cabecalho.jsp"/>
 
-    <form action="adicionaContato">
-        Nome:
-        <input type="text" name="nome" /><br /> 
+    <form action="mvc">
+    	<input type="hidden" name="logica" value="AdicionaContatoLogic">
+        Nome: <input type="text" name="nome" /><br /> 
         E-mail:  <input type="text" name="email" /><br /> 
         Endereco: <input type="text" name="endereco" /> <br /> 
         Data Nascimento:<caelum:campoData id="dataNascimento" /> <br />        
