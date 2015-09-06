@@ -1,5 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -11,8 +11,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Table renderizada via taglibs</title>
 <style>
-body{font-family: "calibri light";}
+body {
+	font-family: "calibri light";
+}
 </style>
+<link rel="stylesheet" type="text/css" href="fancy-table.css">
 </head>
 <body>
 
@@ -29,21 +32,24 @@ body{font-family: "calibri light";}
 			<th>Email</th>
 			<th>Endereco</th>
 			<th>Data</th>
+			<th>Remover</th>
+			<th>Alterar</th>
 		</tr>
 		<!-- percorre contatos montando as linhas da tabela  -->
-		<c:forEach var="contato" items="${dao.lista }" varStatus="id">
- 			<tr bgcolor="#${id.count % 2 == 0 ? 'F3F3F3' : 'FFFFFF' }">  			
+		<c:forEach var="contato" items="${contatos}" varStatus="id">
+			<tr bgcolor="#${id.count % 2 == 0 ? 'F3F3F3' : 'FFFFFF' }">
 				<td>${contato.nome }</td>
-				<td>
-					<c:if test="${not empty contato.email }">
+				<td><c:if test="${not empty contato.email }">
 						<a href="mailto:${contato.email }">${contato.email }</a>
-					</c:if>
-					<c:if test="${empty contato.email }">
+					</c:if> <c:if test="${empty contato.email }">
 						E-mail não informado
-					</c:if>
-				</td>
+					</c:if></td>
 				<td>${contato.endereco }</td>
-				<td> <fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy" /> </td>
+				<td><fmt:formatDate value="${contato.dataNascimento.time}"
+						pattern="dd/MM/yyyy" /></td>
+				<td><a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a></td>
+				<td><a
+					href="mvc?logica=AlterandoContatoLogic&id=${contato.id}&nome=${contato.nome}&email=${contato.email}&dataNascimento=${contato.dataNascimento.time}&endereco=${contato.endereco}">Alterar</a></td>
 			</tr>
 		</c:forEach>
 	</table>
